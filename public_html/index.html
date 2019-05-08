@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Angular Practice</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Js/angular.min.js">
+        </script>
+    </head>
+    <body>
+        <div ng-app="" ng-init="firstName='Jhon'">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+  <p The Name is <span ng-bind="firstName"></span></p>
+  <p> My first expression {{5+5}}</p>
+  <p>{{name}}</p>
+</div>
+    </body>
+</html>
