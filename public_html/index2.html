@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular Practice -2 </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Js/angular.min.js">
+        </script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myContrl">
+            First  Name: <input type="text" ng-model="firstName" />
+            Second Name: <input ng-model="lastName" type="text" />
+            <br/>
+             <p>Full Name: {{firstName +" "+ lastName}}</p>
+        </div>
+        <script>
+            var app = angular.module('myApp',[]);
+            
+            app.controller('myContrl',function($scope){
+                $scope.firstName = "Santosh";
+                $scope.lastName = "P";
+            });
+        </script>
+    </body>
+</html>
