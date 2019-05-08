@@ -7,11 +7,19 @@
         </script>
     </head>
     <body>
-        <div ng-app="myApp" ng-controller="myCtrl">
+        <div ng-app="myApp"  ng-controller="myCtrl">
             {{firstName+" "+lastName}}
+            <p w3-test-directive></p>
         </div>
         
         <script src="Js/myApp.js"></script>
         <script src="Js/myCtrl.js"></script>
+        <script>
+            app.directive("w3TestDirective", function() {
+        return {
+        template : "I was made in a directive constructor!"
+            };
+        });
+        </script>
     </body>
 </html>
