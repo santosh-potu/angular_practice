@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Angular Practice -2 </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="Js/angular.min.js">
+        </script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-init="names=['Jani','Hege','Kai'];candidates=[{name:'Jani',country:'Norway'},{name:'Hege',country:'Sweden'},{name:'Kai',country:'Denmark'}]">
+            <ul>
+                <li ng-repeat=" X in names">
+                    {{ X  }}
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat=" X in candidates">
+                    {{ X.name +"-"+X.country  }}
+                </li>
+            </ul>
+            
+            
+        <w3-test-directive></w3-test-directive>
+        <p w3-test-directive></p>
+        <div class="w3-test-directive"></div>
+        <!-- directive: w3-test-directive -->
+        </div>
+
+        <script src="Js/myApp.js"></script>
+        <script src="Js/myCtrl.js"></script>
+        
+        <script>
+            app.directive("w3TestDirective", function() {
+        return {
+            // require:"A" // ECMA element class attribute comment
+        template : "I was made in a directive constructor!"
+            };
+        });
+        </script>
+    </body>
+</html>
+        
