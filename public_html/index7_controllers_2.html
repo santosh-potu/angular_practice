@@ -7,13 +7,21 @@
         </script>
     </head>
     <body>
-        <div ng-app="myApp" ng-controller="namesController">
-            <ul ng-repeat=" X in names">
-                <li>{{X.name+"-"+X.country}}</li>
-            </ul>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            First name <input type="text" ng-model="firstName"/><br/>
+            Last name <input type="text" ng-model="lastName"/><br/>
+            Full Name {{fullName()}}
         </div>
         
-        <script src="Js/namesController.js">
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope){
+                $scope.firstName = "Santosh";
+                $scope.lastName = "P";
+                $scope.fullName = function(){
+                    return $scope.firstName + $scope.lastName;
+                };
+            });
         </script>
     </body>
 </html>
