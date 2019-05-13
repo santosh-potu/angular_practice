@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="Js/angular.min.js"></script>
+<body>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1 ng-mousemove="count=count+1"> Mouse hover me!</h1>
+        <h2>{{count}}</h2>
+        
+        <button ng-click="myFunction()">Click me!</button>
+
+           <p>{{ click_count }}</p>
+           
+           <button ng-click="myFunction2()"> Click me</button>
+           
+           <div ng-show="showMe">
+                <h1>Menu:</h1>
+                <div>Pizza</div>
+                <div>Pasta</div>
+                <div>Pesce</div>
+            </div>
+           <h1 ng-mousemove="myFunction3($event)">Mouse Over me</h1>
+           
+           <p>Co-ordinates {{x+', '+y}}</p>
+
+   </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.count=0;
+            $scope.click_count=0;
+            $scope.myFunction = function(){
+              $scope.click_count++;  
+            };
+            $scope.myFunction2 = function(){
+                $scope.showMe = !$scope.showMe;
+            }
+            $scope.myFunction3 = function(myE) {
+                $scope.x = myE.clientX;
+                $scope.y = myE.clientY;
+            }
+        });
+    </script>
+
+</body>
+</html>
